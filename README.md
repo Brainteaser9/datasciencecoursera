@@ -28,3 +28,5 @@ tdtrain <- cbind(subject_train, y_train, x_train, body_acc_x_train, body_acc_y_t
 td <- rbind(tdtest, tdtrain)
 colnames(asd)[1:2] <- c("Person", "Activity")
 features <- read.table("./features.txt")
+vnames <- as.character(features$V2)
+colnames(td)[3:563] <- vnames
