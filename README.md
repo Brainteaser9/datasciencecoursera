@@ -1,4 +1,3 @@
-library(data.table)
 y_test <- read.table("./test/y_test.txt")
 x_test <- read.table("./test/X_test.txt")
 subject_test <- read.table("./test/subject_test.txt")
@@ -27,7 +26,5 @@ total_acc_z_train <- read.table("./train/Inertial Signals/total_acc_z_train.txt"
 tdtest <- cbind(subject_test, y_test, x_test, body_acc_x_test, body_acc_y_test, body_acc_z_test, body_gyro_x_test, body_gyro_y_test, body_gyro_z_test, total_acc_x_test, total_acc_y_test, total_acc_z_test)
 tdtrain <- cbind(subject_train, y_train, x_train, body_acc_x_train, body_acc_y_train, body_acc_z_train, body_gyro_x_train, body_gyro_y_train, body_gyro_z_train, total_acc_x_train, total_acc_y_train, total_acc_z_train)
 td <- rbind(tdtest, tdtrain)
-colnames(td)[1:2] <- c("Person", "Activity")
+colnames(asd)[1:2] <- c("Person", "Activity")
 features <- read.table("./features.txt")
-vnames <- as.character(features$V2)
-colnames(td)[3:563] <- vnames
